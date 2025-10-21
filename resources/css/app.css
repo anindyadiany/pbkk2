@@ -1,0 +1,24 @@
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
+@import "tailwindcss";
+/* resources/css/app.css */
+@import "tailwindcss";
+
+
+/* ✅ Global font setup */
+@import url('https://fonts.googleapis.com/css2?family=Arial+Narrow&display=swap');
+
+body {
+  font-family: "Arial Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Arial+Narrow&display=swap');
+
+/* optional: your tokens */
+@theme {
+  --font-sans: "Helvetica Narrow", "Arial Narrow", "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui;
+}
