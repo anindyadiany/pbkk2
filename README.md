@@ -1,3 +1,4 @@
+
 ## Youtube Link 𐔌՞. .՞𐦯
 
 https://youtu.be/KpSmQx1EssA
@@ -106,9 +107,50 @@ Member::create([
     'generation' => 'C26',
     'image' => 'images/parisya1.jpg',
 ]);
-
 ```
 
 ### CRUD Implementation ᢉ𐭩 ♬⋆.˚
 
+CRUD system for managing the form submissions from people applying to join the External Affairs
+
+- #### CREATE
+##### File: apply.blade.php
+##### Route: /apply → ApplicationController@store
+1. Name
+2. Email
+3. Generation (optional)
+4. Motivation
+
+When submitted, the form data is validated and saved into the applications table.
+After submission, the user is redirected to the Applicants list page with a success message.
+
+Example action:
+
+`Application::create($request->validated());`
+
+- #### READ
+##### Files: index.blade.php and show.blade.php 
+##### Route: /applications → ApplicationController@index, /applications/{id} → ApplicationController@show, The index page shows all submitted applications in a searchable, paginated table. The show page displays the details of a single application.
+
+Example action:
+
+`$applications = Application::latest()->paginate(5);`
+
+- #### UPDATE
+##### Files: edit.blade.php
+##### Route: /applications/{id}/edit → ApplicationController@update
+
+User can edit an application’s data.
+
+Example action:
+`$application->update($request->validated());`
+
+- #### DELETE
+##### Action: Delete button in index.blade.php
+##### Route: /applications/{id} → ApplicationController@destroy. 
+
+The user can delete their application. After deletion, the page redirects back to the application list with a success message.
+
+Example action:
+`$application->delete();`
 
